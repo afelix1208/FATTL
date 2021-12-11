@@ -12,3 +12,15 @@ navToggle.addEventListener('click', () => {
         primaryNav.setAttribute("data-visible", false);
     }
 })
+
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("nav-container").style.top = "0";
+  } else {
+    document.getElementById("nav-container").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
